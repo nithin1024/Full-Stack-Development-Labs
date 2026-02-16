@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Simple Calculator</title>
+
+<style>
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+}
+
+.calculator {
+    border: 2px solid black;
+    padding: 15px;
+}
+
+.display {
+    height: 50px;
+    width: 220px;
+    border: 1px solid black;
+    margin-bottom: 10px;
+    text-align: right;
+    font-size: 24px;
+    padding: 8px;
+    box-sizing: border-box;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+td {
+    border: 1px solid black;
+}
+
+button {
+    width: 50px;
+    height: 50px;
+    font-size: 18px;
+    background: white;
+    border: none;
+}
+</style>
+</head>
+
+<body>
+
+<div class="calculator">
+
+<div class="display">0</div>
+
+<table>
+<tr>
+<td><button>C</button></td>
+<td><button>±</button></td>
+<td><button>%</button></td>
+<td><button>÷</button></td>
+</tr>
+
+<tr>
+<td><button>7</button></td>
+<td><button>8</button></td>
+<td><button>9</button></td>
+<td><button>×</button></td>
+</tr>
+
+<tr>
+<td><button>4</button></td>
+<td><button>5</button></td>
+<td><button>6</button></td>
+<td><button>−</button></td>
+</tr>
+
+<tr>
+<td><button>1</button></td>
+<td><button>2</button></td>
+<td><button>3</button></td>
+<td><button>+</button></td>
+</tr>
+
+<tr>
+<td colspan="2"><button style="width:100px;">0</button></td>
+<td><button>.</button></td>
+<td><button>=</button></td>
+</tr>
+</table>
+
+</div>
+
+</body>
+</html>

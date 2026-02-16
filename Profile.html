@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Nithin Kumar | Profile</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:url("https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1600&q=80") no-repeat center center/cover;
+    min-height:100vh;
+    color:#f1f1f1;
+}
+
+.overlay{
+    background:rgba(0,0,0,0.75);
+    min-height:100vh;
+}
+
+header{
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+    gap:10px;
+    padding:50px 12%;
+    border-bottom:1px solid rgba(255,255,255,0.2);
+}
+
+header h1{
+    font-size:38px;
+}
+
+.tagline{
+    font-size:18px;
+    color:#cccccc;
+}
+
+.social{
+    display:flex;
+    gap:20px;
+}
+
+.social a{
+    text-decoration:none;
+    color:#ffffff;
+    font-size:15px;
+    opacity:0.8;
+}
+
+.social a:hover{
+    opacity:1;
+}
+
+section{
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+    padding:50px 12%;
+}
+
+section h2{
+    font-size:26px;
+    margin-bottom:20px;
+}
+
+.box{
+    display:flex;
+    background:rgba(20,20,20,0.85);
+    padding:30px;
+    border-radius:8px;
+    width:100%;
+}
+
+.about-text{
+    font-size:16px;
+    line-height:1.7;
+}
+
+.skills-list{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    list-style:disc;
+    margin-left:20px;
+    font-size:16px;
+}
+
+.projects-grid{
+    display:flex;
+    flex-wrap:wrap;
+    gap:20px;
+}
+
+.project-card{
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    width:260px;
+    background:rgba(30,30,30,0.9);
+    padding:22px;
+    border-radius:8px;
+    transition:0.2s;
+}
+
+.project-card:hover{
+    background:rgba(50,50,50,0.95);
+}
+
+.project-card h3{
+    font-size:16px;
+    margin-bottom:10px;
+}
+
+.project-card a{
+    margin-top:12px;
+    text-decoration:none;
+    color:white;
+    border:1px solid white;
+    padding:7px 12px;
+    border-radius:4px;
+    font-size:14px;
+    width:fit-content;
+}
+
+.project-card a:hover{
+    background:white;
+    color:black;
+}
+
+.contact-container{
+    display:flex;
+    gap:40px;
+    flex-wrap:wrap;
+}
+
+.contact-info{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    background:rgba(30,30,30,0.9);
+    padding:25px;
+    border-radius:8px;
+    min-width:260px;
+}
+
+.contact-info a{
+    text-decoration:none;
+    color:white;
+}
+
+.contact-info a:hover{
+    text-decoration:underline;
+}
+
+.contact-form{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    min-width:260px;
+}
+
+.contact-form input,
+.contact-form textarea{
+    padding:10px;
+    border:none;
+    border-radius:4px;
+    background:#111;
+    color:white;
+}
+
+.contact-form textarea{
+    height:110px;
+    resize:none;
+}
+
+.contact-form button{
+    padding:10px;
+    background:white;
+    color:black;
+    border:none;
+    cursor:pointer;
+    border-radius:4px;
+}
+
+.contact-form button:hover{
+    opacity:0.85;
+}
+
+footer{
+    text-align:center;
+    padding:25px;
+    font-size:13px;
+    color:#cccccc;
+    border-top:1px solid rgba(255,255,255,0.2);
+}
+</style>
+</head>
+
+<body>
+
+<div class="overlay">
+
+<header>
+    <h1>Nithin Kumar</h1>
+    <p class="tagline">AI & Data Science Enthusiast</p>
+
+    <div class="social">
+        <a href="https://github.com/nithin1024" target="_blank">GitHub</a>
+        <a href="https://www.linkedin.com/in/nithinkumar-bandaru-711a6529a" target="_blank">LinkedIn</a>
+        <a href="https://www.instagram.com/_its._me._nithin._nk._007" target="_blank">Instagram</a>
+        <a href="https://x.com/NithinKumar2214" target="_blank">Twitter</a>
+    </div>
+</header>
+
+<section>
+    <h2>About Me</h2>
+    <div class="box">
+        <p class="about-text">
+            I am currently pursuing B.Tech in Artificial Intelligence and Data Science at Amrita School of Engineering, Bengaluru.
+            I enjoy building intelligent systems, scalable software, and creative web solutions.
+        </p>
+    </div>
+</section>
+
+<section>
+    <h2>Skills</h2>
+    <div class="box">
+        <ul class="skills-list">
+            <li>Python Programming</li>
+            <li>Machine Learning</li>
+            <li>Web Development</li>
+            <li>Data Science</li>
+        </ul>
+    </div>
+</section>
+
+<section>
+    <h2>Projects</h2>
+    <div class="projects-grid">
+        <div class="project-card">
+            <h3>Credit Risk Prediction</h3>
+            <a href="https://github.com/nithin1024/Machine-learning-for-bank-loan-risk-assessment_Enhancing-predictive-acuuracy" target="_blank">View Project</a>
+        </div>
+
+        <div class="project-card">
+            <h3>Restaurant Management</h3>
+            <a href="https://github.com/nithin1024/Restaurent-Management-using-DataStructures" target="_blank">View Project</a>
+        </div>
+
+        <div class="project-card">
+            <h3>Car Rental System</h3>
+            <a href="https://github.com/nithin1024/Car-Rental-System-using-java" target="_blank">View Project</a>
+        </div>
+
+        <div class="project-card">
+            <h3>NSMS Travels Website</h3>
+            <a href="https://github.com/nithin1024/NSMS_Travels" target="_blank">View Project</a>
+        </div>
+    </div>
+</section>
+
+<section>
+    <h2>Contact</h2>
+    <div class="contact-container">
+        <div class="contact-info">
+            <a href="mailto:nithinkumarbandaru2020@gmail.com">nithinkumarbandaru2020@gmail.com</a>
+            <a href="tel:+91 9121766101">+91 9121766101</a>
+            <span>Bangalore, India</span>
+        </div>
+
+        <form class="contact-form">
+            <input type="text" placeholder="Full Name" required>
+            <input type="email" placeholder="Email" required>
+            <textarea placeholder="Message"></textarea>
+            <button type="submit">Send</button>
+        </form>
+    </div>
+</section>
+
+<footer>
+    © 2026 Nithin Kumar
+</footer>
+
+</div>
+
+</body>
+</html>

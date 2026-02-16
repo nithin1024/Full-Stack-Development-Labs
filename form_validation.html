@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Form with Event Handlers</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Registration Form</h2>
+
+<form onsubmit="return validateForm()">
+
+Name:<br>
+<input type="text" id="name" onkeyup="checkName()"><br>
+<span id="nameError"></span><br>
+
+Email:<br>
+<input type="text" id="email" onkeyup="checkEmail()"><br>
+<span id="emailError"></span><br>
+
+Phone:<br>
+<input type="text" id="phone" onkeyup="checkPhone()"><br>
+<span id="phoneError"></span><br>
+
+Select Course:<br>
+<select id="course" onchange="checkCourse()">
+    <option value="">--Select--</option>
+    <option value="CSE">CSE</option>
+    <option value="AI">AI</option>
+    <option value="DS">DS</option>
+</select><br>
+<span id="courseError"></span><br>
+
+<button type="submit" onclick="buttonClick()">Submit</button>
+
+</form>
+
+<p id="result"></p>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

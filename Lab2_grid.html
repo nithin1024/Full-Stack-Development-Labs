@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Image Grid Layout</title>
+<h1 align = "center"> Lab Assignment </h1>
+
+<style>
+body{
+    background:#f2f2f2;
+    padding:30px;
+    font-family:Arial;
+}
+
+.gallery{
+    background:white;
+    padding:20px;
+    display:grid;
+    gap:15px;
+
+    grid-template-columns: 1fr 1.3fr 1.3fr 1.3fr 1fr;
+    grid-template-rows: 200px 200px 140px;
+
+    grid-template-areas:
+        "lt big big big rt"
+        "lb big big big rb"
+        "b1 b2  b3  b4  b5";
+}
+
+.gallery img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    border-radius:5px;
+    box-shadow:0px 4px 8px rgba(0,0,0,0.3);
+}
+
+.lt{ grid-area: lt; }
+.lb{ grid-area: lb; }
+.big{ grid-area: big; }
+.rt{ grid-area: rt; }
+.rb{ grid-area: rb; }
+
+.b1{ grid-area: b1; }
+.b2{ grid-area: b2; }
+.b3{ grid-area: b3; }
+.b4{ grid-area: b4; }
+.b5{ grid-area: b5; }
+
+</style>
+</head>
+
+<body>
+
+<div class="gallery">
+
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXQcdkW0Ra_t8JmQaIVW2tzn8crKzgbo7MgA&s" class="lt">
+    <img src="https://webfiles.amrita.edu/2021/09/Kkut9UoG-amritapuri-470x285-1.jpg" class="lb">
+
+    <img src="https://webfiles.amrita.edu/2020/03/JfWjH0bF-790-2021-08-06T175840.622.jpg" class="big">
+
+    <img src="https://webfiles.amrita.edu/2022/05/vYMb94yV-amrita-admission-chennai-campus.jpg" class="rt">
+    <img src="https://webfiles.amrita.edu/2021/09/Kkut9UoG-amritapuri-470x285-1.jpg" class="rb">
+
+    <img src="https://webfiles.amrita.edu/2022/10/hhypmj64-amrita-faridabad-campus-banner-2022.jpg" class="b1">
+    <img src="https://webfiles.amrita.edu/2025/08/Haridwar-Campus-Wide.jpg" class="b2">
+    <img src="https://webfiles.amrita.edu/2021/03/jUilovNe-kochi-campus-new-square-3.jpg" class="b3">
+    <img src="https://webfiles.amrita.edu/2022/05/KlsdCLuq-amrita-admission-mysuru-campus.jpg" class="b4">
+    <img src="https://webfiles.amrita.edu/2025/01/computing-nagercoil-banner.jpg" class="b5">
+
+</div>
+
+</body>
+</html>

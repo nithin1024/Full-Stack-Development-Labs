@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Validated Registration Form</title>
+
+<style>
+
+body {
+    font-family: Arial;
+    background-color: lightgrey;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 60%;
+    margin: 40px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 0px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+}
+
+button {
+    padding: 6px 10px;
+    margin-top: 5px;
+}
+
+.strength {
+    height: 10px;
+    margin-top: 5px;
+}
+
+.weak {
+    width: 33%;
+    background-color: red;
+}
+
+.medium {
+    width: 66%;
+    background-color: orange;
+}
+
+.strong {
+    width: 100%;
+    background-color: green;
+}
+
+</style>
+
+<script>
+
+function validateForm() {
+
+    var fname = document.getElementById("fname").value.trim();
+    var lname = document.getElementById("lname").value.trim();
+
+    if (fname == "" || lname == "") {
+        alert("Please enter both first name and last name.");
+        return false;
+    }
+
+    var city = document.getElementById("city").value.trim();
+    var state = document.getElementById("state").value.trim();
+    var zip = document.getElementById("zip").value.trim();
+
+    if (city == "" || state == "" || zip == "") {
+        alert("Please enter complete address.");
+        return false;
+    }
+
+    if (!/^[0-9]{6}$/.test(zip)) {
+        alert("ZIP code must be 6 digits.");
+        return false;
+    }
+
+    var phone = document.getElementById("phone").value.trim();
+    var phonePattern = /^\+91[0-9]{10}$/;
+
+    if (!phonePattern.test(phone)) {
+        alert("Phone number must be in format +91XXXXXXXXXX.");
+        return false;
+    }
+
+    var email = document.getElementById("email").value.trim();
+    var emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+    if (!emailPattern.test(email)) {
+        alert("Enter a valid email address.");
+        return false;
+    }
+
+    var dob = document.getElementById("dob").value;
+
+    if (dob == "") {
+        alert("Enter date of birth.");
+        return false;
+    }
+
+    var birthDate = new Date(dob);
+    var today = new Date();
+
+    if (birthDate > today) {
+        alert("Date of birth cannot be in the future.");
+        return false;
+    }
+
+    var message = document.getElementById("message").value.trim();
+
+    if (message == "") {
+        alert("Message cannot be empty.");
+        return false;
+    }
+
+    var captcha = document.getElementById("captcha").value.trim();
+
+    if (captcha.toLowerCase() != "draupadi murmu") {
+        alert("Security answer is incorrect.");
+        return false;
+    }
+
+    var password = document.getElementById("password").value;
+    var username = fname.toLowerCase();
+
+    var strongPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*()_+\-=\[\]{};:'",<>/?])(?!.*\.).{8,}$/;
+
+    var mediumPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()_+\-=\[\]{};:'",<>/?])(?!.*\.).{6,}$/;
+
+    if (password.toLowerCase() == username) {
+        alert("Password cannot be same as username.");
+        return false;
+    }
+
+    if (!(strongPattern.test(password) || mediumPattern.test(password))) {
+        alert("Password must be at least medium strength.");
+        return false;
+    }
+
+    alert("Form submitted successfully!");
+    return true;
+}
+
+function checkStrength() {
+
+    var password = document.getElementById("password").value;
+    var strengthBar = document.getElementById("strengthBar");
+
+    var strongPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*()_+\-=\[\]{};:'",<>/?])(?!.*\.).{8,}$/;
+
+    var mediumPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()_+\-=\[\]{};:'",<>/?])(?!.*\.).{6,}$/;
+
+    if (strongPattern.test(password)) {
+        strengthBar.className = "strength strong";
+    }
+    else if (mediumPattern.test(password)) {
+        strengthBar.className = "strength medium";
+    }
+    else {
+        strengthBar.className = "strength weak";
+    }
+}
+
+function togglePassword() {
+
+    var pass = document.getElementById("password");
+
+    if (pass.type === "password") {
+        pass.type = "text";
+    } else {
+        pass.type = "password";
+    }
+}
+
+</script>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>User Registration Form</h2>
+
+<form onsubmit="return validateForm()">
+
+<label>First Name:</label>
+<input type="text" id="fname">
+
+<label>Last Name:</label>
+<input type="text" id="lname">
+
+<label>City:</label>
+<input type="text" id="city">
+
+<label>State:</label>
+<input type="text" id="state">
+
+<label>ZIP Code:</label>
+<input type="text" id="zip">
+
+<label>Phone Number:</label>
+<input type="text" id="phone" placeholder="+91XXXXXXXXXX">
+
+<label>Email Address:</label>
+<input type="text" id="email">
+
+<label>Date of Birth:</label>
+<input type="date" id="dob">
+
+<label>Password:</label>
+<input type="password" id="password" onkeyup="checkStrength()">
+
+<button type="button" onclick="togglePassword()">Show / Hide Password</button>
+
+<div id="strengthBar" class="strength"></div>
+
+<label>Message:</label>
+<textarea id="message" rows="4"></textarea>
+
+<label>Security Question:</label>
+<p>Who is the current President of India?</p>
+
+<input type="text" id="captcha">
+
+<br>
+
+<input type="submit" value="Submit">
+
+</form>
+
+</div>
+
+</body>
+</html>
